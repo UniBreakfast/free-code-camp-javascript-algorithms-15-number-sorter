@@ -6,10 +6,13 @@ const sortInputArray = (event) => {
   const inputValues = [
     ...document.getElementsByClassName("values-dropdown")
   ].map((dropdown) => Number(dropdown.value));
+  const algorithm = document.getElementsByClassName("algorithm-dropdown")[0].value;
 
-  const sortedValues = inputValues.sort((a, b) => {
-    return a - b;
-  });
+  const sortedValues = 
+    algorithm === 'bubble' ? bubbleSort(inputValues) :
+    algorithm === 'selection' ? selectionSort(inputValues) :
+    algorithm === 'insertion' ? insertionSort(inputValues) : 
+    inputValues.sort((a, b) => a - b);
 
   updateUI(sortedValues);
 }

@@ -75,8 +75,11 @@ select {
   font-size: inherit;
   line-height: inherit;
   height: 38px;
-  width: 50px;
   text-align: center;
+}
+
+[name="values"] {
+  width: 50px;
 }
 
 button {
